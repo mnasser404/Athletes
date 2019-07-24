@@ -5,8 +5,8 @@ import nasser.com.athletes.Models.Athlete
 class Repository {
 
 
-    fun getFromRemote(): List<Athlete> {
-
+    fun geDatatFromRemote(): List<Athlete> {
+       return Remote().startRequestToGetData()
     }
 
 

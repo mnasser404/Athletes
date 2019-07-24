@@ -13,28 +13,25 @@ class Remote {
 
     fun initRetrofit(): Retrofit {
         val retrofit = Retrofit.Builder()
-                .baseUrl(Utils.URL)
+                .baseUrl(Utils.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
         return retrofit
     }
 
-    fun getData(): List<Athlete> {
-        var athelets = 
+    fun startRequestToGetData(): List<Athlete> {
+        var athelets = listOf<Athlete>()
         val api = initRetrofit().create(APIs::class.java)
         api.getListOfAthelets().enqueue(object : Callback<List<Athlete>> {
             override fun onResponse(call: Call<List<Athlete>>, response: Response<List<Athlete>>) {
-                athelets = response.body()
+                    athelets = response.body()!!
             }
-
             override fun onFailure(call: Call<List<Athlete>>, t: Throwable) {
 
             }
 
         })
-
-
         return athelets
     }
 

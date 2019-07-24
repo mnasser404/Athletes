@@ -19,6 +19,7 @@ import nasser.com.athletes.FetchAthletesData;
 import nasser.com.athletes.Models.Athlete;
 import nasser.com.athletes.R;
 import nasser.com.athletes.Utils;
+import nasser.com.athletes.data.Repository;
 
 
 /**
@@ -53,13 +54,7 @@ public class MainFragment extends Fragment {
     public void onStart() {
         super.onStart();
         if (Utils.isNetworkAvailable(getActivity())) {
-            try {
-                athleteList = new FetchAthletesData().execute(Utils.URL).get();
-                adapter = new RecyclerViewAdapter(getActivity(), athleteList);
-                athletesRecyclerView.setAdapter(adapter);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+           new  Repository().geDatatFromRemote();
         } else {
             Toast.makeText(getActivity() , getString(R.string.check_ur_internet) , Toast.LENGTH_SHORT).show();
         }
