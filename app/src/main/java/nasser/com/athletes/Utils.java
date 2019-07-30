@@ -12,8 +12,8 @@ import org.json.JSONObject;
 
 public class Utils {
 
-    public static final String BASE_URL = "https://gist.githubusercontent.com/";
-    public static final String ATHELETS_URL = "Bassem-Samy/f227855df4d197d3737c304e9377c4d4/raw/ece2a30b16a77ee58091886bf6d3445946e10a23/athletes.josn";
+    public static final String BASE_URL = "https://gist.githubusercontent.com/Bassem-Samy/f227855df4d197d3737c304e9377c4d4/raw/ece2a30b16a77ee58091886bf6d3445946e10a23/";
+    public static final String ATHELETS_URL = "athletes.josn";
     public static final String NAME_EXTRA = "athleteName";
     public static final String IMAGE_EXTRA = "athleteImage";
     public static final String BRIEF_EXTRA = "athleteBrief";
@@ -25,11 +25,6 @@ public class Utils {
     public static final String ATHLETES_BRIEF = "brief";
 
 
-    public static boolean isNetworkAvailable(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
 
     public static boolean CheckJSONObject(String JSON) {
 

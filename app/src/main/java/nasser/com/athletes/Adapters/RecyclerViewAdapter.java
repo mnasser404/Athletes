@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import nasser.com.athletes.Activities.DetailActivity;
-import nasser.com.athletes.Models.Athlete;
+import nasser.com.athletes.Models.AthleteModel;
 import nasser.com.athletes.R;
 import nasser.com.athletes.Utils;
 
@@ -25,10 +25,10 @@ import nasser.com.athletes.Utils;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.Holder> {
 
     private Context context;
-    private List<Athlete> athleteList;
+    private List<AthleteModel.Athele> athleteList;
 
 
-    public RecyclerViewAdapter(Context context, List<Athlete> athleteList) {
+    public RecyclerViewAdapter(Context context, List<AthleteModel.Athele> athleteList) {
         this.context = context;
         this.athleteList = athleteList;
     }
@@ -42,8 +42,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(RecyclerViewAdapter.Holder holder, int position) {
-        Athlete athlete = athleteList.get(position);
-        Glide.with(context).load(athlete.getImageUrl()).placeholder(R.drawable.default_imag).into(holder.athleteImage);
+        AthleteModel.Athele athlete = athleteList.get(position);
+        Glide.with(context).load(athlete.getImage()).placeholder(R.drawable.default_imag).into(holder.athleteImage);
         holder.athleteName.setText(athlete.getName());
     }
 
@@ -67,10 +67,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Athlete athlete = athleteList.get(getAdapterPosition());
+                    AthleteModel.Athele athlete = athleteList.get(getAdapterPosition());
                     Intent i = new Intent(context, DetailActivity.class);
                     i.putExtra(Utils.NAME_EXTRA, athlete.getName());
-                    i.putExtra(Utils.IMAGE_EXTRA, athlete.getImageUrl());
+                    i.putExtra(Utils.IMAGE_EXTRA, athlete.getImage());
                     i.putExtra(Utils.BRIEF_EXTRA, athlete.getBrief());
                     context.startActivity(i);
                 }
