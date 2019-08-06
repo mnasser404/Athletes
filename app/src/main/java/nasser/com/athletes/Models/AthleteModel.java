@@ -1,5 +1,6 @@
 package nasser.com.athletes.Models;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ public class AthleteModel {
         this.athletes = athletes;
     }
 
-    public static class Athele {
+    public static class Athele implements Serializable {
 
         private String name;
         private String image;

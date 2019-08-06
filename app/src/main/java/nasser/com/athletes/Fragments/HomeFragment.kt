@@ -17,30 +17,29 @@ import nasser.com.athletes.R
 class HomeFragment : Fragment() {
 
     lateinit var adapter: RecyclerViewAdapter
-    lateinit var atheleList: List<AthleteModel.Athele>
     lateinit var viewModel: MainViewModel
     lateinit var layoutView: View
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         layoutView = inflater.inflate(R.layout.fragment_main, container, false)
-        setupRecyclerView()
-        initializeViewModel()
         return layoutView
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        setupRecyclerView()
+        initializeViewModel()
+    }
+
     private fun setupRecyclerView() {
-        athletesRecyclerView.layoutManager = GridLayoutManager(activity, 2)
-        atheleList = listOf()
-        adapter = RecyclerViewAdapter(activity, atheleList)
-        athletesRecyclerView.adapter = adapter
+        recyclerView.layoutManager = GridLayoutManager(activity, 2)
     }
 
     private fun initializeViewModel() {
         val observer = Observer<List<AthleteModel.Athele>> { list ->
             list?.let {
-                atheleList = list
-                adapter.notifyDataSetChanged()
+                adapter = RecyclerViewAdapter(activity, list)
+                recyclerView.adapter = adapter
             }
         }
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
