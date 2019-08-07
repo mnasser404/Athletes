@@ -11,9 +11,9 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.athlete_recycler_item.view.*
 import nasser.com.athletes.Activities.DetailActivity
+import nasser.com.athletes.BusinessConstants
 import nasser.com.athletes.Models.AthleteModel
 import nasser.com.athletes.R
-import nasser.com.athletes.BusinessConstants
 
 class RecyclerViewAdapter(var context: Context?, var atheletList: List<AthleteModel.Athele>) : RecyclerView.Adapter<RecyclerViewAdapter.AtheleHolder>() {
 
@@ -48,7 +48,7 @@ class RecyclerViewAdapter(var context: Context?, var atheletList: List<AthleteMo
                 val selectedAthele = atheletList.get(adapterPosition)
                 val intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra(BusinessConstants.ACTIVITY_EXTRA, selectedAthele)
-                context?.let {  it.startActivity(intent)}
+                context?.let { it.startActivity(intent) }
             }
         }
 
