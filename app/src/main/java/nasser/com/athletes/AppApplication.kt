@@ -13,6 +13,6 @@ class AppApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        AppApplication.database = Room.databaseBuilder(this, AppDatabase::class.java, "atheles-db").build()
+        database = Room.databaseBuilder(this, AppDatabase::class.java, "atheles-db").build()
     }
 }

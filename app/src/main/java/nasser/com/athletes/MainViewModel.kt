@@ -14,11 +14,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val context = getApplication<Application>().applicationContext
     private lateinit var viewData: MutableLiveData<List<AthleteModel.Athele>>
 
+
     fun loadViewData(): LiveData<List<AthleteModel.Athele>> {
-        if (isNetworkAvailable(context)) {
-            viewData = Repository().geDatatFromRemote()
-        } else {
-            viewData = Repository().getDataFromCache()
+        viewData = Repository().getDataFromCache()
+        viewData.value?.let {
+            if (it.isEmpty()) {
+                if (isNetworkAvailable(context)) {
+                    viewData = Repository().geDatatFromRemote()
+                } else {
+                    //ToDo Show Error Messages
+                }
+            }
         }
         return viewData
     }
