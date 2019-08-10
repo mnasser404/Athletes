@@ -7,7 +7,7 @@ import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.net.ConnectivityManager
 import nasser.com.athletes.Models.AthleteModel
-import nasser.com.athletes.data.Repository
+import nasser.com.athletes.data.remote.Repository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

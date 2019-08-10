@@ -1,4 +1,4 @@
-package nasser.com.athletes.data
+package nasser.com.athletes.data.remote
 
 import nasser.com.athletes.BusinessConstants.Companion.ATHELETS_URL
 import nasser.com.athletes.Models.AthleteModel

@@ -1,4 +1,4 @@
-package nasser.com.athletes.data
+package nasser.com.athletes.data.remote
 
 import android.arch.lifecycle.MutableLiveData
 import nasser.com.athletes.BusinessConstants.Companion.BASE_URL
