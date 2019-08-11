@@ -1,18 +1,17 @@
 package nasser.com.athletes
 
 import android.app.Application
-import android.arch.lifecycle.AndroidViewModel
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.net.ConnectivityManager
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import nasser.com.athletes.Models.AthleteModel
 import nasser.com.athletes.data.remote.Repository
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val context = getApplication<Application>().applicationContext
-    private lateinit var viewData: MutableLiveData<List<AthleteModel.Athele>>
+    private lateinit var viewData: LiveData<List<AthleteModel.Athele>>
 
 
     fun loadViewData(): LiveData<List<AthleteModel.Athele>> {

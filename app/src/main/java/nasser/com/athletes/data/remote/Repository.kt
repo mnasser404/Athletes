@@ -1,6 +1,7 @@
 package nasser.com.athletes.data.remote
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import nasser.com.athletes.AppApplication
 import nasser.com.athletes.Models.AthleteModel
 import nasser.com.athletes.data.cache.AppDatabase
@@ -22,7 +23,7 @@ class Repository {
         return data
     }
 
-    fun getDataFromCache(): MutableLiveData<List<AthleteModel.Athele>> {
+    fun getDataFromCache(): LiveData<List<AthleteModel.Athele>> {
         return dao.getAll()
     }
 

@@ -6,8 +6,8 @@ import nasser.com.athletes.data.cache.AppDatabase
 
 class AppApplication : Application() {
 
-    companion object{
-        var database : AppDatabase? = null
+    companion object {
+        var database: AppDatabase? = null
     }
 
 

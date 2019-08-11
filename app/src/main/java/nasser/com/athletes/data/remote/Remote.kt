@@ -1,6 +1,6 @@
 package nasser.com.athletes.data.remote
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import nasser.com.athletes.BusinessConstants.Companion.BASE_URL
 import nasser.com.athletes.Models.AthleteModel
 import retrofit2.Call

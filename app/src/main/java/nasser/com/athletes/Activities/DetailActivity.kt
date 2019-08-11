@@ -1,12 +1,12 @@
 package nasser.com.athletes.Activities
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail.*
+import nasser.com.athletes.BusinessConstants
 import nasser.com.athletes.Models.AthleteModel
 import nasser.com.athletes.R
-import nasser.com.athletes.BusinessConstants
 
 class DetailActivity : AppCompatActivity() {
 
