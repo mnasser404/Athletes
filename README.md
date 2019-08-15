@@ -1,3 +1,5 @@
+List Of Athelets with Details Screen
+
 Technologies : 
 - Kotlin 
 - Room 
