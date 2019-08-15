@@ -37,10 +37,9 @@ class HomeFragment : Fragment() {
 
     private fun initializeViewModel() {
         val observer = Observer<List<AthleteModel.Athele>> { list ->
-            list?.let {
-                adapter = RecyclerViewAdapter(activity, list)
-                recyclerView.adapter = adapter
-            }
+            adapter = RecyclerViewAdapter(activity, list)
+            recyclerView.adapter = adapter
+
         }
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.loadViewData().observe(this, observer)
